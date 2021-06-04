@@ -1,7 +1,7 @@
 $ip = $_SERVER['REMOTE_ADDR'];
 $browser = $_SERVER['HTTP_USER_AGENT'];
 $TheirDate = date('d/m/Y');
-$TheirTime = date('G:i:s');
+$TheirTime = time('G:i:s');
 $details = json_decode(file_get_contents("http://ip-api.com/json/{$ip}"));
 $flag = "https://www.countryflags.io/{$details->countryCode}/shiny/64.png";
 $data = "**User IP:** $ip\n**Date:** $TheirDate\n**Time:** $TheirTime \n**Location:** $details->city \n**Region:** $details->region\n**Country** $details->country\n**Postal Code:** $details->zip";
